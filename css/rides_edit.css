@@ -1,0 +1,251 @@
+*{
+	background-color: #00aeef;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.encabezado{
+	margin-top: 1%;
+}
+
+.imagen img{
+	display: block;
+	margin: auto;
+	height: 25%;
+	width: 25%;
+}
+
+.menu{
+	margin-left: 8%;
+}
+
+.menu ul li{
+	list-style: none;
+	display: inline;
+	margin: -0.2%;
+}
+
+.menu ul li a{
+	border: 1px solid #000000;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-weight:bold;
+	color: #fff;
+	font-size: 20px;
+}
+
+.tablero{
+	border-radius: 14px 0 0 14px;
+	background: #3A58BD;
+}
+
+.ajustes{
+	border-radius: 0 14px 14px 0;
+	background: #3A58BD;
+}
+
+.paseos{
+	background: #1A1B84;
+}
+
+.menu a:hover{
+	color: #FFDC00;
+}
+
+.usuario{
+	display: block;
+	position: absolute;
+	top: 37.5%;
+	left: 70%;
+}
+.usuario h2{
+	float: left;
+	color: #fff;
+}
+
+.usuario h3{
+	margin: 8% 5% 0% 5%;
+	float: left;
+	color: #1A1B84;
+}
+
+.usuario img{
+	display: block;
+	width: 20%;
+	height: 20%;
+}
+
+.navegacion{
+	margin: 3% 0% 0% 11%;
+	color: #000000;
+}
+
+#principal{
+	color: #1A1B84;
+    font-size: 20px;
+    color: #fff;
+}
+
+#paseos{
+	color: #fff;
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+#editar{
+	color: #000;
+    font-size: 20px;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+.flecha{
+    position: absolute;
+    left: 15.5%;
+    top: 49%;
+}
+
+.flecha_2{
+    position: absolute;
+    left: 21.2%;
+    top: 49%;
+}
+
+.flecha-1 {
+	height: 13px; width: 13px;
+	border: 5px solid #1A1B84;
+	border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+}
+
+.informacion input{
+    display: block;
+    margin-bottom: 20px;
+    width: 40%;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.informacion label{
+    background: #00aeef;
+    color: #fff;
+    font-size: 16px;
+}
+
+.informacion input:focus{
+    border: 1px solid #000;
+}
+.informacion{
+    width: 40%;
+    margin: 3% 0% 2% 17%;
+}
+
+textarea{
+    display: block;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 90px;
+    resize: none;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+textarea:focus{
+    border: 1px solid #1A1B84
+}
+
+.inicio{
+    width: 50%;
+    float: left;
+}
+
+.inicio input{
+    width: 80%;
+}
+
+hr{
+    margin: 0% 10% 0% 11%;
+    height: 2px;
+    border: none;
+    background-color: #1A1B84;
+}
+
+.contenedor h2{
+    color: #fff;
+    margin: 2% 0% 0% 12%;
+}
+
+.tiempo input{
+    display: block;
+    margin-bottom: 20px;
+    width: 30%;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.tiempo label{
+    background: #00aeef;
+    color: #fff;
+    font-size: 16px;
+}
+
+.tiempo input:focus{
+    border: 1px solid #000;
+}
+.tiempo{
+    width: 25%;
+    margin: 3% 0% 0% 17%;
+    float: left;
+}
+
+.dias{
+    margin: 3% 0% 0% 0%;
+    color: #fff;
+}
+
+.dias label{
+    display: block;
+}
+
+.botones input[type="submit"]{
+    background: #1A1B84;
+    color: #fff;
+    border: none;
+    width: 15%;
+    height: 40px;;
+    margin-left: 50%;
+    font-size: 15px;
+}
+
+.botones{
+    clear: both;
+    width: 50%;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+.botones input[type="submit"]:hover{
+    background: #3A58BD;
+    cursor: pointer;
+}
+
+.botones a{
+    text-decoration: none;
+    background: #00aeef;
+    color: #1A1B84;
+}
+
+.botones a:hover{
+    color: #fff;
+}

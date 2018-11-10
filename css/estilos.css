@@ -1,0 +1,151 @@
+*{
+    position: relative;
+    font-family:'Times New Roman', Times, serif;
+}
+.navbar-inverse{
+    background-color: #00aeef;
+}
+
+.section{
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+li a{
+    color: #fff;
+    font-size: 18px;
+}
+
+li a:hover{
+    color: #1A1B84;
+}
+
+.navbar-brand{
+    cursor: default;
+    font-size: 30px;
+}
+
+.navbar-inverse .navbar-toggler {
+    background-color: #1A1B84;
+}
+  
+.navbar-inverse .navbar-toggler  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.tico{
+    font-family: 'Patua One', cursive;
+    color: #002b7f;
+}
+
+.rides{
+    font-family: 'Patua One', cursive;
+    color: #ce1126;
+}
+.btn{
+    background: #1A1B84;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover{
+    background: #3A58BD;
+    border: none;
+}
+
+#section2 form{
+    margin-left: 28%;
+}
+
+#section2 h2{
+    margin-bottom: 2%;
+    font-size: 40px;
+}
+
+.table{
+    margin-top: 4%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+@media (min-width: 1281px) {
+    #section2 form{
+        margin-left: 25%;
+    }
+    .table{
+        width: 80%;
+        margin-left: 12%;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #section1 h1{
+        font-size: 40px;
+    }
+    #section2 form{
+        margin-left: 25%;
+    }
+    .table{
+        width: 80%;
+        margin-left: 15%;
+    }
+}
+
+  
+@media (min-width: 768px) and (max-width: 1024px) {
+    #section1 h1{
+        font-size: 30px;
+    }    
+    .table{
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+  
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #section1 h1{
+        font-size: 40px;
+    }
+
+    #section2 form {
+        margin-left: 20%;
+    }
+
+    .table{
+        width:100%;
+        margin-left: 0%;
+    }
+}
+  
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #section1 h1{
+        font-size: 35px;
+    }  
+
+    #section2 form button{
+        margin-top: 3%;
+    }
+    .table{
+        width:100%;
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #section1 h1{
+        font-size: 30px;
+    }
+    #section2 form button{
+        margin-top: 3%;
+    }
+
+    #section2 form {
+        margin-left: 20%;
+    }
+
+    .table{
+        width:100%;
+        margin-left: 0%;
+    }
+}

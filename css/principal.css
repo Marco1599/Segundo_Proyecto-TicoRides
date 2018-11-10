@@ -1,0 +1,158 @@
+*{
+	background-color: #00aeef;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.encabezado{
+	margin-top: 1%;
+}
+
+.imagen img{
+	display: block;
+	margin: auto;
+	height: 25%;
+	width: 25%;
+}
+
+.menu{
+	margin-left: 8%;
+}
+
+.menu ul li{
+	list-style: none;
+	display: inline;
+	margin: -0.2%;
+}
+
+.menu ul li a{
+	border: 1px solid #000000;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-weight:bold;
+	color: #fff;
+	font-size: 20px;
+}
+
+.tablero{
+	border-radius: 14px 0 0 14px;
+	background: #1A1B84;
+}
+
+.opciones{
+	border-radius: 0 14px 14px 0;
+	background: #3A58BD;
+}
+
+.paseos{
+	background: #3A58BD;
+}
+
+.menu a:hover{
+	color: #FFDC00;
+}
+
+.usuario{
+	display: block;
+	position: absolute;
+	top: 37.5%;
+	left: 70%;
+}
+.usuario h2{
+	float: left;
+	color: #fff;
+}
+
+.usuario h3{
+	margin: 8% 5% 0% 5%;
+	float: left;
+	color: #1A1B84;
+}
+
+.usuario img{
+	display: block;
+	width: 20%;
+	height: 20%;
+}
+
+.navegacion{
+	margin: 3% 0% 0% 11%;
+	color: #000000;
+}
+
+.navegacion a{
+	color: #fff;;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.flecha{
+    position: absolute;
+    left: 15.5%;
+    top: 49%;
+}
+
+.flecha-1 {
+	height: 13px; width: 13px;
+	border: 5px solid #1A1B84;
+	border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+}
+
+.contenedor{
+	margin: 3% 0% 0% 11%;
+}
+
+.contenedor h2{
+	color: #fff;
+	font-size: 30px;
+}
+
+.caja{
+	color: #fff;
+	width: 60%;
+	border: 2px solid #1A1B84;
+	padding: 10px 10px 20px 5px;
+}
+
+.caja h2{
+	font-size: 22px;
+}
+
+table{
+    border-collapse: collapse;
+	border: 3px solid #000;
+}
+table td{
+    border: 3px solid #000;
+    padding: 2% 2% 0% 1%;
+    width: 200px;
+    background: #2874A6;
+}
+
+table td a{
+	color: #fff;
+    background: #2874A6;
+    text-decoration: none;
+}
+
+table td a:hover{
+    color: #FFDC00;
+}
+
+.titulo{
+    background: #154360;
+}
+
+.btn_agregar{
+	height: 40px;
+	width: 80px;
+	font-size: 17px;
+	background-color: #fff;
+	margin: 0% 0% 2% 90%;
+	font-weight: bold;
+
+}
+
+.resultados{
+	margin-top: -5%;
+}

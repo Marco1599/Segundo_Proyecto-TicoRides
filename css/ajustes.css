@@ -1,0 +1,187 @@
+*{
+	background-color: #00aeef;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.encabezado{
+	margin-top: 1%;
+}
+
+.imagen img{
+	display: block;
+	margin: auto;
+	height: 25%;
+	width: 25%;
+}
+
+.menu{
+	margin-left: 8%;
+}
+
+.menu ul li{
+	list-style: none;
+	display: inline;
+	margin: -0.2%;
+}
+
+.menu ul li a{
+	border: 1px solid #000000;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-weight:bold;
+	color: #fff;
+	font-size: 20px;
+}
+
+.tablero{
+	border-radius: 14px 0 0 14px;
+	background: #3A58BD;
+}
+
+.ajustes{
+	border-radius: 0 14px 14px 0;
+	background: #1A1B84;
+}
+
+.paseos{
+	background: #3A58BD;
+}
+
+.menu a:hover{
+	color: #FFDC00;
+}
+
+.usuario{
+	display: block;
+	position: absolute;
+	top: 37.5%;
+	left: 70%;
+}
+.usuario h2{
+	float: left;
+	color: #fff;
+}
+
+.usuario h3{
+	margin: 8% 5% 0% 5%;
+	float: left;
+	color: #1A1B84;
+}
+
+.usuario img{
+	display: block;
+	width: 20%;
+	height: 20%;
+}
+
+.navegacion{
+	margin: 3% 0% 0% 11%;
+	color: #000000;
+}
+
+#principal{
+	color: #1A1B84;
+    font-size: 20px;
+    color: #fff;
+}
+
+#ajustes{
+	color: #000;
+    font-size: 20px;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+.flecha{
+    position: absolute;
+    left: 15.5%;
+    top: 49%;
+}
+
+.flecha-1 {
+	height: 13px; width: 13px;
+	border: 5px solid #1A1B84;
+	border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+}
+
+form{
+    position: absolute;
+    left: 16%;
+    width: 30%;
+    margin-top: 30px;
+}
+
+label{
+    font-size: 15px;
+    width: 100%;
+    background: #fff;
+}
+
+input{
+    display: block;
+    margin-bottom: 20px;
+    width: 50%;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+label{
+    background: #00aeef;
+    color: #fff;
+    font-size: 16px;
+}
+
+input:focus{
+    border: 1px solid #1A1B84
+}
+
+input[type="submit"]{
+    background: #1A1B84;
+    color: #fff;
+    border: none;
+    margin-top: 3%;
+    width: 20%;
+    margin-left: 80%;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover{
+    background: #3A58BD;
+    cursor: pointer;
+}
+
+
+.contenedor a{
+    float: left;
+    margin: 10px;
+    text-decoration: none;
+    background: #00aeef;
+    color: #1A1B84;
+}
+
+.contenedor a:hover{
+    color: #fff;
+}
+
+textarea{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 110px;
+    resize: none;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+textarea:focus{
+    border: 1px solid #1A1B84
+}
