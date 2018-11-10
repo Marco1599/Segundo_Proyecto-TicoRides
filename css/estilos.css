@@ -2,6 +2,9 @@
     position: relative;
     font-family:'Times New Roman', Times, serif;
 }
+.jumbotron{
+    margin: auto;
+}
 .navbar-inverse{
     background-color: #00aeef;
 }
@@ -54,6 +57,7 @@ li a:hover{
 .btn:hover{
     background: #3A58BD;
     border: none;
+    color: #fff;
 }
 
 #section2 h2{
