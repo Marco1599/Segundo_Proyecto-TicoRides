@@ -14,49 +14,52 @@
         <nav class="navbar fixed-top  navbar-expand-lg navbar-inverse" id="navbar">
             <a class="navbar-brand" href="#"><img src="img/TicoRides.png" width="50" height="50" alt="Logo"><span class="tico"> Tico</span> <span class="rides"> Rides</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
+                <span class="navbar-toggler-icon "></span>
             </button>                 
-        <div class="collapse navbar-collapse" id="navegacion">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#section1">Inicio</a>
-                </li>
-                <li class="nav-item active">
+            <div class="collapse navbar-collapse" id="navegacion">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#section1">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="#section2">Buscar Paseo</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Acerca de</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn" type="submit">Iniciar Sesión</button>
-            </form>
-        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn" type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
         </nav>
     </header>
     <div class="main">
-        <div class="section text-center" id="section1">
-                 <img src="img/TicoRides.png" class="img-fluid" width="600px" height="500px" alt="Logo">
-                 <h1 class="display-3 ">Bienvenido(@) a <span class="tico">Tico</span><span class="rides">Rides</span>.com</h1>
-             </div>
+        <div class="section text-center col-lg-12 col-md-12 col-sm-12 col-xs-2" id="section1">
+            <img src="img/TicoRides.png" class="img-fluid" width="600px" height="500px" alt="Logo">
+            <h1 class="display-3 ">Bienvenido(@) a <span class="tico">Tico</span><span class="rides">Rides</span>.com</h1>
         </div>
-        <div class="section text-center" id="section2">
+        <div class="section text-center col-lg-12 col-md-12 col-sm-12 col-xs-8" id="section2">
             <h2 class="display-2">Buscar un paseo</h2>
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="inputOrigen">Desde</label>
-                    <input type="text" id="inputOrigen" placeholder="Origen" class="form-control mx-sm-3" aria-describedby="textHelpInline">
-                    <label for="inputDestino">a</label>
-                    <input type="text" id="inputDestino" placeholder="Destino" class="form-control mx-sm-3" aria-describedby="textHelpInline">
-                    <button type="submit" class="btn btn-primary">Buscar mi viaje!</button>
+            <form>
+                <div class="row">
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Origen">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Destino">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Buscar mi Viaje!</button>
+                    </div>
                 </div>
             </form>
             <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Usuario</th>
-                        <th scope="col">Inicio</th>
-                        <th scope="col">Fin</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Destino</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -83,8 +86,8 @@
             </table>
         </div>
     </div>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
