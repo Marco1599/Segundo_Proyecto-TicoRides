@@ -2,9 +2,6 @@
     position: relative;
     font-family:'Times New Roman', Times, serif;
 }
-.jumbotron{
-    margin: auto;
-}
 .navbar-inverse{
     background-color: #00aeef;
 }
@@ -13,8 +10,8 @@
     padding-right: 5%;
 }
 .section{
-    padding-top: 120px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 65px;
 }
 
 li a{
