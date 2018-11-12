@@ -2,6 +2,15 @@
     position: relative;
     font-family:'Times New Roman', Times, serif;
 }
+footer{
+    background:#4e5056;
+    color: #fff;
+    height: 100px;
+}
+
+footer h4{
+    padding-top: 4%;
+}
 .navbar-inverse{
     background-color: #00aeef;
 }
@@ -103,5 +112,10 @@ li a:hover{
 @media (min-width: 320px) and (max-width: 480px) {
     #section1 h1{
         font-size: 30px;
+    }
+
+    footer h4{
+        font-size: 18px;
+        padding-top: 10%;
     }
 }
