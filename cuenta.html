@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/principal.css">
-    <title>Inicio | Tico Rides</title>
+    <link rel="stylesheet" href="css/cuenta.css">
+    <title>Cuenta | Tico Rides</title>
 </head>
 
 <body>
@@ -49,48 +49,37 @@
     <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                <li class="breadcrumb-item" aria-current="page"><a href="">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Configuración</li>
             </ol>
         </nav>
     </div>
-    <div class="section pt-5">
-        <div class="container">
-            <h2 class="text-center display-4">Mis paseos</h2>
-            <div class="row pt-5">
-                <h3 class="col-md-11">Tu lista actual de paseos</h3>
-                <a href="#" class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 12 16">
-                        <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z" /></svg></a>
-            </div>
-            <table class="table table-hover table-bordered">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Origen</th>
-                        <th scope="col">Destino</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Brete</td>
-                        <td>Barrio Los Angeles</td>
-                        <td>Ciudad Quesada</td>
-                        <td><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Casa</td>
-                        <td>Ciudad Quesada</td>
-                        <td>Los Angeles</td>
-                        <td><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Oficina chepe</td>
-                        <td>Ciudad Quesada</td>
-                        <td>San Pedro</td>
-                        <td><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="section">
+        <div class="container pt-5">
+            <form class="col-md-7 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Nombre Completo</label>
+                        <input type="text" class="form-control" id="inputName" value="Bladimir Arroyo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputVelocidad">Velocidad Promedio</label>
+                        <input type="text" class="form-control" id="inputVelocidad" value="60 Km/h">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sobre_mi">Sobre Mi</label>
+                    <textarea class="form-control" id="sobre_mi" rows="4" placeholder="Algo sobre mi va aquí"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="from-group col-md-7 col-lg-8 col-xl-9 pt-1">
+                        <a href="#">Cancelar</a>
+                    </div>
+                    <div class="from-group col-md-5 col-lg-4 col-xl-3 pt-1">
+                        <button type="submit" class=" btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <footer>

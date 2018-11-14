@@ -8,12 +8,12 @@
     background-color: #00aeef;
 }
 
-li a{
+ul li a{
     color: #fff;
     font-size: 18px;
 }
 
-li a:hover{
+ul li a:hover{
     color: #1A1B84;
 }
 
@@ -64,4 +64,38 @@ footer{
 
 footer h4{
     padding-top: 4%;
+}
+
+#btnUser{
+    font-weight: bold;
+    background: #00aeef;
+    color: #fff;
+    border: none;
+}
+
+#btnUser:hover{
+    background: #1A1B84;
+    border: none;
+    color: #fff;
+}
+
+#btnUser:focus{
+    background: #1A1B84;
+}
+
+.dropdown-menu{
+	background: #1A1B84;
+}
+
+.dropdown-item{
+	color: #fff;
+}
+
+.dropdown-item:hover{
+	color: #fff;
+	background: #3A58BD;
+}
+
+.dropdown-divider{
+	margin: 0%;
 }

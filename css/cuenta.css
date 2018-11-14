@@ -1,0 +1,16 @@
+.section{
+    padding-bottom:213px;
+}
+
+textarea{
+    resize: none;
+}
+
+.from-group a{
+    text-decoration: none;
+    color: #1A1B84;
+}
+
+.from-group a:hover{
+    color: red;
+}
