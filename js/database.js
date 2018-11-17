@@ -1,6 +1,5 @@
 var userList = [];
-
-function addUserToSystem(nombre, apellidos, telefono, usuario, password) {
+ function addUserToSystem(nombre, apellidos, telefono, usuario, password) {
     var newUser = {
         nombre: nombre,
         apellidos: apellidos,
@@ -12,8 +11,7 @@ function addUserToSystem(nombre, apellidos, telefono, usuario, password) {
     userList.push(newUser);
     localStorageUserList(userList);
 }
-
-function getUserList() {
+ function getUserList() {
     var storagerList = localStorage.getItem('localUserList');
     if (storagerList == null) {
         userList = [];
@@ -23,24 +21,19 @@ function getUserList() {
     }
     return userList;
 }
-
-function localStorageUserList(list) {
+ function localStorageUserList(list) {
     localStorage.setItem('localUserList', JSON.stringify(list));
 }
-
-function validateUser(user, password) {
+ function validateUser(user, password) {
     var userList = getUserList();
     var acceso = false;
-
-    for (var i = 0; i < userList.length; i++) {
+     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario && password == userList[i].password) {
             acceso = true;
-            sessionStorage.setItem('nameUser', userList[i][0]);
-            sessionStorage.setItem('surNamesUser', userList[i][1]);
-            sessionStorage.setItem('user', userList[i][3])
+            sessionStorage.setItem('nameUser', userList[i].nombre);
+            sessionStorage.setItem('surNamesUser', userList[i].apellidos);
+            sessionStorage.setItem('user', userList[i].usuario)
         }
-
-    }
+     }
     return acceso;
-
-}
+ }
