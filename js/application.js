@@ -1,7 +1,7 @@
-document.querySelector('#btnRegistrarme').addEventListener('click', validateInputsRegistro);
-document.querySelector('#btnIniciarSesion').addEventListener('click', iniciarSesion);
+document.querySelector('#btnRegistrarme').addEventListener('click', validateInputsRegister);
+document.querySelector('#btnIniciarSesion').addEventListener('click', login);
 
-function iniciarSesion(){
+function login(){
     var user = document.querySelector('#txtUser').value;
     var pass = document.querySelector('#txtPass').value;
     var acceso = false;
@@ -17,7 +17,7 @@ function iniciarSesion(){
 }
 
 
-function validateInputsRegistro() {
+function validateInputsRegister() {
     var nombre = document.querySelector('#txtNombre').value;
     var apellidos = document.querySelector('#txtApellidos').value;
     var telefono = document.querySelector('#txtTelefono').value;
@@ -26,7 +26,11 @@ function validateInputsRegistro() {
     var repeatpass = document.querySelector('#txtRepeatpass').value;
     if (nombre == "" || apellidos == "" || telefono == "" || usuario == "" || password == "" || repeatpass == "") {
         alert("Ingrese todos los datos");
-    } else {
+    }
+    else if (validateUsername(usuario)){
+        alert("El nombre de usuario ya existe");
+    }
+    else {
         validatePassword();
     }
 }
@@ -42,6 +46,16 @@ function validatePassword() {
     }
 }
 
+function validateUsername(user){
+    var userList = getUserList();
+    var acceso = false;
+    for (var i = 0; i < userList.length; i++) {
+        if (user == userList[i].usuario) {
+            acceso = true;
+        }
+    }
+    return acceso;
+}
 
 function saveUser() {
     var nombre = document.querySelector('#txtNombre').value,
