@@ -18,3 +18,8 @@ function getUserList() {
 function localStorageUserList(list) {
     localStorage.setItem('localUserList', JSON.stringify(list));
 }
+
+function nameUser(){
+    var user = sessionStorage.getItem('user');
+    return user;
+}
