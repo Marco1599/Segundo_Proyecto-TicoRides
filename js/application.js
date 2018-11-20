@@ -1,16 +1,14 @@
-document.querySelector('#btnRegistrarme').addEventListener('click', validateInputsRegister);
-document.querySelector('#btnIniciarSesion').addEventListener('click', login);
 
-function login(){
-    var user = document.querySelector('#txtUser').value;
-    var pass = document.querySelector('#txtPass').value;
+function login() {
+    var user = document.getElementById('txtUser').value;
+    var pass = document.getElementById('txtPass').value;
     var acceso = false;
-    acceso = validateUser(user,pass);
+    acceso = validateUser(user, pass);
 
-    if(acceso){
-        location.href="principal.html";
+    if (acceso) {
+        location.href = "principal.html";
     }
-    else{
+    else {
         alert("Datos incorrectos");
     }
 
@@ -18,36 +16,42 @@ function login(){
 
 
 function validateInputsRegister() {
-    var nombre = document.querySelector('#txtNombre').value;
-    var apellidos = document.querySelector('#txtApellidos').value;
-    var telefono = document.querySelector('#txtTelefono').value;
-    var usuario = document.querySelector('#txtUsuario').value;
-    var password = document.querySelector('#txtPassword').value;
-    var repeatpass = document.querySelector('#txtRepeatpass').value;
+    var nombre = document.getElementById('txtNombre').value;
+    var apellidos = document.getElementById('txtApellidos').value;
+    var telefono = document.getElementById('txtTelefono').value;
+    var usuario = document.getElementById('txtUsuario').value;
+    var password = document.getElementById('txtPassword').value;
+    var repeatpass = document.getElementById('txtRepeatpass').value;
+
+    var newUser = {
+        nombre: nombre,
+        apellidos: apellidos,
+        telefono: telefono,
+        usuario: usuario,
+        password: password
+    };
     if (nombre == "" || apellidos == "" || telefono == "" || usuario == "" || password == "" || repeatpass == "") {
         alert("Ingrese todos los datos");
     }
-    else if (validateUsername(usuario)){
+    else if (validateUsername(usuario)) {
         alert("El nombre de usuario ya existe");
     }
     else {
-        validatePassword();
+        validatePassword(newUser, repeatpass);
     }
 }
 
-function validatePassword() {
-    var password = document.querySelector('#txtPassword').value;
-    var repeatpass = document.querySelector('#txtRepeatpass').value;
-    if (password == repeatpass) {
-        saveUser();
-        location.href="principal.html";
+function validatePassword(object, repeatpass) {
+    if (object.password == repeatpass) {
+        insertList('localUserList',object);
+        location.href = "principal.html";
     } else {
         alert("No coinciden las contraseñas");
     }
 }
 
-function validateUsername(user){
-    var userList = getUserList();
+function validateUsername(user) {
+    var userList = getList('localUserList');
     var acceso = false;
     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario) {
@@ -57,39 +61,28 @@ function validateUsername(user){
     return acceso;
 }
 
-function saveUser() {
-    var nombre = document.querySelector('#txtNombre').value,
-        apellidos = document.querySelector('#txtApellidos').value,
-        telefono = document.querySelector('#txtTelefono').value,
-        usuario = document.querySelector('#txtUsuario').value,
-        password = document.querySelector('#txtPassword').value;
-
-    addUserToSystem(nombre, apellidos, telefono, usuario, password);
-}
-
 function validateUser(user, password) {
-    var userList = getUserList();
+    var userList = getList('localUserList');
     var acceso = false;
     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario && password == userList[i].password) {
             acceso = true;
-            sessionStorageUser(userList[i].nombre, userList[i].apellidos, userList[i].usuario);
+            insertSessionStorage('user',userList[i].usuario);
         }
     }
     return acceso;
 }
 
-function addUserToSystem(nombre, apellidos, telefono, usuario, password) {
-    var userList = [];
-    var newUser = {
-        nombre: nombre,
-        apellidos: apellidos,
-        telefono: telefono,
-        usuario: usuario,
-        password: password
-    };
-    userList = getUserList();
-    userList.push(newUser);
-    localStorageUserList(userList);
-    sessionStorageUser(nombre, apellidos, usuario);
+function loadNameUser() {
+    var user = nameUser();
+    var img = "<img src='img/user.png' width='40' height='40' alt='Usuario' />";
+    var btn = document.getElementById("btnUser");
+    btn.innerHTML = img + " " + user;
 }
+
+function bindEvents() {
+    jQuery('#btnRegistrarme').bind('click', validateInputsRegister);
+    jQuery('#btnIniciarSesion').bind('click', login);
+}
+
+bindEvents();

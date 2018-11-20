@@ -1,12 +1,10 @@
-function sessionStorageUser(nombre, apellidos, usuario) {
-    sessionStorage.setItem('nameUser', nombre);
-    sessionStorage.setItem('surNamesUser', apellidos);
-    sessionStorage.setItem('user', usuario)
+function insertSessionStorage(key,valor) {
+    sessionStorage.setItem(key, valor)
 }
 
-function getUserList() {
+function getList(key) {
     var userList = [];
-    var storagerList = localStorage.getItem('localUserList');
+    var storagerList = localStorage.getItem(key);
     if (storagerList == null) {
         userList = [];
     }
@@ -15,11 +13,16 @@ function getUserList() {
     }
     return userList;
 }
-function localStorageUserList(list) {
-    localStorage.setItem('localUserList', JSON.stringify(list));
-}
 
 function nameUser(){
     var user = sessionStorage.getItem('user');
     return user;
+}
+
+function insertList(key,object) {
+    var list = [];
+    list = getList(key);
+    list.push(object);
+    localStorage.setItem(key, JSON.stringify(list));
+    insertSessionStorage('user',object.usuario);
 }
