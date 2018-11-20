@@ -28,7 +28,9 @@ function validateInputsRegister() {
         apellidos: apellidos,
         telefono: telefono,
         usuario: usuario,
-        password: password
+        password: password,
+        velocida: "",
+        sobre_mi: ""
     };
     if (nombre == "" || apellidos == "" || telefono == "" || usuario == "" || password == "" || repeatpass == "") {
         alert("Ingrese todos los datos");
@@ -43,7 +45,7 @@ function validateInputsRegister() {
 
 function validatePassword(object, repeatpass) {
     if (object.password == repeatpass) {
-        insertList('localUserList',object);
+        insertList('localUserList', object);
         location.href = "principal.html";
     } else {
         alert("No coinciden las contraseñas");
@@ -67,7 +69,7 @@ function validateUser(user, password) {
     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario && password == userList[i].password) {
             acceso = true;
-            insertSessionStorage('user',userList[i].usuario);
+            insertSessionStorage('user', userList[i].usuario);
         }
     }
     return acceso;
@@ -76,8 +78,20 @@ function validateUser(user, password) {
 function loadNameUser() {
     var user = nameUser();
     var img = "<img src='img/user.png' width='40' height='40' alt='Usuario' />";
-    var btn = document.getElementById("btnUser");
-    btn.innerHTML = img + " " + user;
+    jQuery("#btnUser").html(img + " " + user);
+}
+
+function loadAccount() {
+    var user = nameUser();
+    var list = getList('localUserList');
+    for (var i = 0; i < list.length; i++) {
+        if (user == list[i].usuario) {
+            jQuery("#inputName").val(list[i].nombre + " " + list[i].apellidos);
+            jQuery("#inputVelocidad").val(list[i].velocida);
+            jQuery("#sobre_mi").val(list[i].sobre_mi);
+        }
+
+    }
 }
 
 function bindEvents() {
