@@ -26,3 +26,7 @@ function insertList(key,object) {
     localStorage.setItem(key, JSON.stringify(list));
     insertSessionStorage('user',object.usuario);
 }
+
+function saveList(key , list){
+    localStorage.setItem(key, JSON.stringify(list));
+}

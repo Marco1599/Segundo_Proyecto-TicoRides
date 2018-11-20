@@ -94,9 +94,45 @@ function loadAccount() {
     }
 }
 
+function saveAccount() {
+    var name = document.getElementById('inputName').value;
+    var velocidad = document.getElementById('inputVelocidad').value;
+    var descripcion = document.getElementById('sobre_mi').value;
+    name = name.trim();
+    var cadena = name.split(" ");
+    var user = nameUser();
+    var list = getList('localUserList');
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].usuario == user) {
+            if (cadena.length == 4) {
+                list[i].nombre = cadena[0] + " " + cadena[1];
+                list[i].apellidos = cadena[2] + " " + cadena[3];
+            }
+            else if (cadena.length == 3) {
+                list[i].nombre = cadena[0];
+                list[i].apellidos = cadena[1] + " " + cadena[2];
+            }
+            else if (cadena.length == 2) {
+                list[i].nombre = cadena[0];
+                list[i].apellidos = cadena[1];
+            }
+            else {
+                alert("Ingrese el nombre completo");
+            }
+            list[i].velocida = velocidad;
+            list[i].sobre_mi = descripcion;
+            saveList('localUserList', list);
+            location.href = "principal.html";
+        }
+
+    }
+}
+
 function bindEvents() {
     jQuery('#btnRegistrarme').bind('click', validateInputsRegister);
     jQuery('#btnIniciarSesion').bind('click', login);
+    jQuery('#btnGuardarCambios').bind('click', saveAccount);
 }
 
 bindEvents();
