@@ -1,23 +1,27 @@
-*{
-    position: relative;
-    font-family: 'Muli', sans-serif; 
+* {
+    font-family: 'Muli', sans-serif;
 }
 
-.navbar-inverse{
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+.navbar-inverse {
     font-weight: bold;
     background-color: #00aeef;
 }
 
-ul li a{
+ul li a {
     color: #fff;
     font-size: 18px;
 }
 
-ul li a:hover{
+ul li a:hover {
     color: #1A1B84;
 }
 
-.navbar-brand{
+.navbar-brand {
     cursor: default;
     font-size: 30px;
 }
@@ -25,77 +29,81 @@ ul li a:hover{
 .navbar-inverse .navbar-toggler {
     background-color: #1A1B84;
 }
-  
-.navbar-inverse .navbar-toggler  .navbar-toggler-icon {
+
+.navbar-inverse .navbar-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.tico{
+.tico {
     font-family: 'Patua One', cursive;
     color: #002b7f;
 }
 
-.rides{
+.rides {
     font-family: 'Patua One', cursive;
     color: #ce1126;
 }
-.btn{
+
+.btn {
     font-weight: bold;
     background: #1A1B84;
     color: #fff;
     border: none;
 }
 
-.btn:hover{
+.btn:hover {
     background: #3A58BD;
     border: none;
     color: #fff;
 }
 
-.table{
+.table {
     margin-top: 4%;
 }
 
-footer{
-    background:#4e5056;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #4e5056;
     color: #fff;
     height: 100px;
 }
 
-footer h4{
+footer h4 {
     padding-top: 4%;
 }
 
-#btnUser{
+#btnUser {
     font-weight: bold;
     background: #00aeef;
     color: #fff;
     border: none;
 }
 
-#btnUser:hover{
+#btnUser:hover {
     background: #1A1B84;
     border: none;
     color: #fff;
 }
 
-#btnUser:focus{
+#btnUser:focus {
     background: #1A1B84;
 }
 
-.dropdown-menu{
-	background: #1A1B84;
+.dropdown-menu {
+    background: #1A1B84;
 }
 
-.dropdown-item{
-	color: #fff;
+.dropdown-item {
+    color: #fff;
 }
 
-.dropdown-item:hover{
-	color: #fff;
-	background: #3A58BD;
+.dropdown-item:hover {
+    color: #fff;
+    background: #3A58BD;
 }
 
-.dropdown-divider{
-	margin: 0%;
+.dropdown-divider {
+    margin: 0%;
 }

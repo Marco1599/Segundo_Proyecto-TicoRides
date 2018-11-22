@@ -1,4 +1,4 @@
-function insertSessionStorage(key,valor) {
+function insertSessionStorage(key, valor) {
     sessionStorage.setItem(key, valor)
 }
 
@@ -14,19 +14,20 @@ function getList(key) {
     return userList;
 }
 
-function nameUser(){
+function nameUser() {
     var user = sessionStorage.getItem('user');
     return user;
 }
 
-function insertList(key,object) {
+function insertList(key, object) {
     var list = [];
     list = getList(key);
+    let primaryKey = list.length + 1;
+    object.id = primaryKey;
     list.push(object);
     localStorage.setItem(key, JSON.stringify(list));
-    insertSessionStorage('user',object.usuario);
 }
 
-function saveList(key , list){
+function saveList(key, list) {
     localStorage.setItem(key, JSON.stringify(list));
 }

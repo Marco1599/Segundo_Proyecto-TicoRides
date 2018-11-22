@@ -46,6 +46,7 @@ function validateInputsRegister() {
 function validatePassword(object, repeatpass) {
     if (object.password == repeatpass) {
         insertList('localUserList', object);
+        insertSessionStorage('user',object.usuario);
         location.href = "principal.html";
     } else {
         alert("No coinciden las contraseñas");
@@ -129,10 +130,75 @@ function saveAccount() {
     }
 }
 
+function validateInputsRides() {
+    var usuario = nameUser();
+    var nombre = document.getElementById('inputName').value;
+    var origen = document.getElementById('inputOrigen').value;
+    var destino = document.getElementById('inputDestino').value;
+    var descripcion = document.getElementById('inputDescripcion').value;
+    var salida = document.getElementById('inputSalida').value;
+    var llegada = document.getElementById('inputLlegada').value;
+    var lunes = document.getElementById('chkLunes').checked;
+    var martes = document.getElementById('chkMartes').checked;
+    var miercoles = document.getElementById('chkMiercoles').checked;
+    var jueves = document.getElementById('chkJueves').checked;
+    var viernes = document.getElementById('chkViernes').checked;
+    var sabado = document.getElementById('chkSabado').checked;
+    var domingo = document.getElementById('chkDomingo').checked;
+
+
+    var newRide = {
+        usuario: usuario,
+        nombre: nombre,
+        origen: origen,
+        destino: destino,
+        descripcion: descripcion,
+        salida: salida,
+        llegada: llegada,
+        lunes: lunes,
+        martes: martes,
+        miercoles: miercoles,
+        jueves: jueves,
+        viernes: viernes,
+        sabado: sabado,
+        domingo: domingo
+    };
+    if (nombre == "" || origen == "" || destino == "" || descripcion == "" || salida == "" || llegada == "" || validateDays(newRide)) {
+        alert("Ingrese todos los datos");
+    }
+    else if (validateRideName(nombre, usuario)) {
+        alert("El nombre del paseo ya existe");
+    }
+    else{
+        insertList('localRideList', newRide);
+        location.reload(true);
+    }
+}
+
+function validateDays(ride){
+    var acceso = false;
+    if(ride.lunes== false  && ride.martes == false && ride.miercoles == false && ride.jueves== false && ride.viernes == false && ride.sabado == false && ride.domingo==false){
+        acceso = true;
+    }
+    return acceso;
+}
+
+function validateRideName(nombre, usuario) {
+    var ridesList = getList('localRideList');
+    var acceso = false;
+    for (var i = 0; i < ridesList.length; i++) {
+        if (nombre == ridesList[i].nombre && usuario == ridesList[i].usuario) {
+            acceso = true;
+        }
+    }
+    return acceso;
+}
+
 function bindEvents() {
     jQuery('#btnRegistrarme').bind('click', validateInputsRegister);
     jQuery('#btnIniciarSesion').bind('click', login);
     jQuery('#btnGuardarCambios').bind('click', saveAccount);
+    jQuery('#btnGuardarRides').bind('click', validateInputsRides);
 }
 
 bindEvents();
