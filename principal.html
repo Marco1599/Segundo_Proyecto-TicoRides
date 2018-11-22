@@ -61,16 +61,7 @@
                         viewBox="0 0 12 16">
                         <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z" /></svg></a>
             </div>
-            <table class="table table-hover table-bordered">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Origen</th>
-                        <th scope="col">Destino</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-            </table>
+            <table class="table table-hover table-bordered" id="table"></table>
         </div>
     </div>
     <footer>
@@ -84,6 +75,7 @@
     <script src="js/database.js"></script>
     <script>
         loadNameUser();
+        loadUserRides();
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

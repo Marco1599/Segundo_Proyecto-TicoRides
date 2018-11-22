@@ -45,8 +45,8 @@ function validateInputsRegister() {
 
 function validatePassword(object, repeatpass) {
     if (object.password == repeatpass) {
-        insertList('localUserList', object);
-        insertSessionStorage('user',object.usuario);
+        insertList('users', object);
+        insertSessionStorage('user', object.usuario);
         location.href = "principal.html";
     } else {
         alert("No coinciden las contraseñas");
@@ -54,7 +54,7 @@ function validatePassword(object, repeatpass) {
 }
 
 function validateUsername(user) {
-    var userList = getList('localUserList');
+    var userList = getList('users');
     var acceso = false;
     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario) {
@@ -65,7 +65,7 @@ function validateUsername(user) {
 }
 
 function validateUser(user, password) {
-    var userList = getList('localUserList');
+    var userList = getList('users');
     var acceso = false;
     for (var i = 0; i < userList.length; i++) {
         if (user == userList[i].usuario && password == userList[i].password) {
@@ -84,7 +84,7 @@ function loadNameUser() {
 
 function loadAccount() {
     var user = nameUser();
-    var list = getList('localUserList');
+    var list = getList('users');
     for (var i = 0; i < list.length; i++) {
         if (user == list[i].usuario) {
             jQuery("#inputName").val(list[i].nombre + " " + list[i].apellidos);
@@ -102,7 +102,7 @@ function saveAccount() {
     name = name.trim();
     var cadena = name.split(" ");
     var user = nameUser();
-    var list = getList('localUserList');
+    var list = getList('users');
 
     for (let i = 0; i < list.length; i++) {
         if (list[i].usuario == user) {
@@ -123,7 +123,7 @@ function saveAccount() {
             }
             list[i].velocida = velocidad;
             list[i].sobre_mi = descripcion;
-            saveList('localUserList', list);
+            saveList('users', list);
             location.href = "principal.html";
         }
 
@@ -169,22 +169,22 @@ function validateInputsRides() {
     else if (validateRideName(nombre, usuario)) {
         alert("El nombre del paseo ya existe");
     }
-    else{
-        insertList('localRideList', newRide);
+    else {
+        insertList('rides', newRide);
         location.reload(true);
     }
 }
 
-function validateDays(ride){
+function validateDays(ride) {
     var acceso = false;
-    if(ride.lunes== false  && ride.martes == false && ride.miercoles == false && ride.jueves== false && ride.viernes == false && ride.sabado == false && ride.domingo==false){
+    if (ride.lunes == false && ride.martes == false && ride.miercoles == false && ride.jueves == false && ride.viernes == false && ride.sabado == false && ride.domingo == false) {
         acceso = true;
     }
     return acceso;
 }
 
 function validateRideName(nombre, usuario) {
-    var ridesList = getList('localRideList');
+    var ridesList = getList('rides');
     var acceso = false;
     for (var i = 0; i < ridesList.length; i++) {
         if (nombre == ridesList[i].nombre && usuario == ridesList[i].usuario) {
@@ -193,6 +193,34 @@ function validateRideName(nombre, usuario) {
     }
     return acceso;
 }
+
+function loadUserRides() {
+    var rides = getList('rides');
+    var usuario = nameUser();
+    if (rides.length == 0) {
+        document.getElementById('table').style.display = "none";
+    }
+    else {
+        renderTable(usuario,rides);
+    }
+}
+
+function renderTable(usuario, object) {
+    var table = jQuery('#table');
+    var rows = "";
+    object.forEach((ride, index) => {
+        if(usuario == ride.usuario){
+            var row = `<tr><td>${ride.nombre}</td><td>${ride.origen}</td><td>${ride.destino}</td>`;
+            row += `<td> <a onclick="edit(this)" data-id="${ride.id}" data-entity="table" class=" link edit" >Editar</a>  |  <a  onclick="deleteEntity(this);" data-id="${ride.id}" data-entity="table" class="link delete">Eliminar</a>  </td>`;
+            rows += row + '</tr>';
+        }
+    });
+    if(!rows == ""){
+        var rows = "<thead class='text-center'><tr><th scope='col'>Nombre</th><th scope='col'>Origen</th><th scope='col'>Destino</th><th scope='col'>Acciones</th></tr></thead>" + '<tbody>' + rows + '</tbody>';
+        table.html(rows);
+    }
+}
+
 
 function bindEvents() {
     jQuery('#btnRegistrarme').bind('click', validateInputsRegister);

@@ -1,3 +1,22 @@
 .section{
 	padding-bottom: 75px;
 }
+a.link.edit{
+	cursor: pointer;
+	color: #007bff;
+}
+
+a.link.delete{
+	cursor: pointer;
+	color: #007bff;
+}
+
+a.link.edit:hover{
+	color: #007bff;
+	text-decoration: underline;
+}
+
+a.link.delete:hover{
+	color: #007bff;
+	text-decoration: underline;
+}
