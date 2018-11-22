@@ -201,11 +201,11 @@ function loadUserRides() {
         document.getElementById('table').style.display = "none";
     }
     else {
-        renderTable(usuario,rides);
+        loadTableRidesUser(usuario,rides);
     }
 }
 
-function renderTable(usuario, object) {
+function loadTableRidesUser(usuario, object) {
     var table = jQuery('#table');
     var rows = "";
     object.forEach((ride, index) => {
