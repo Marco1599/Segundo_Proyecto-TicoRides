@@ -31,3 +31,20 @@ function insertList(key, object) {
 function saveList(key, list) {
     localStorage.setItem(key, JSON.stringify(list));
 }
+
+function deleteFromTable(key, objectId) {
+    var rides = getList(key);
+  
+    if (!rides) {
+      return false;
+    }
+    var newRides = [];
+    rides.forEach((element) => {
+      if (element.id != objectId) {
+        newRides.push(element);
+      }
+    });
+  
+    saveList(key,newRides);
+    return newRides;
+  }

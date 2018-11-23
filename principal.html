@@ -64,6 +64,91 @@
             <table class="table table-hover table-bordered" id="table"></table>
         </div>
     </div>
+    <div class="container">
+        <div class="modal fade" id="editar">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Editar Paseo</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputName">Nombre del viaje</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="Escriba el nombre del viaje">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputOrigen">Origen</label>
+                                        <input type="text" class="form-control" id="inputOrigen" placeholder="Lugar de salida">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputDestino">Destino</label>
+                                        <input type="text" class="form-control" id="inputDestino" placeholder="Lugar de llegada">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputDescripcion">Descripción</label>
+                                    <textarea class="form-control" id="inputDescripcion" rows="2" placeholder="Añade aqui la descripción del viaje"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputSalida">Salida</label>
+                                        <input type="text" class="form-control" id="inputSalida" placeholder="6:45 AM">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputLlegada">Llegada estimada</label>
+                                        <input type="text" class="form-control" id="inputLlegada" placeholder="7:05 AM">
+                                    </div>
+                                </div>
+                                <label>Seleccionar Días</label>
+                                <div class="form-row pb-3">
+                                    <div class="col-md-5">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkLunes">
+                                            <label class="custom-control-label" for="chkLunes">Lunes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkMartes">
+                                            <label class="custom-control-label" for="chkMartes">Martes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkMiercoles">
+                                            <label class="custom-control-label" for="chkMiercoles">Miércoles</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkJueves">
+                                            <label class="custom-control-label" for="chkJueves">Jueves</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkViernes">
+                                            <label class="custom-control-label" for="chkViernes">Viernes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkSabado">
+                                            <label class="custom-control-label" for="chkSabado">Sábado</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkDomingo">
+                                            <label class="custom-control-label" for="chkDomingo">Domingo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="btnGuardarRide">Guardar</button>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="text-center">

@@ -201,7 +201,7 @@ function loadUserRides() {
         document.getElementById('table').style.display = "none";
     }
     else {
-        loadTableRidesUser(usuario,rides);
+        loadTableRidesUser(usuario, rides);
     }
 }
 
@@ -209,15 +209,65 @@ function loadTableRidesUser(usuario, object) {
     var table = jQuery('#table');
     var rows = "";
     object.forEach((ride, index) => {
-        if(usuario == ride.usuario){
+        if (usuario == ride.usuario) {
             var row = `<tr><td>${ride.nombre}</td><td>${ride.origen}</td><td>${ride.destino}</td>`;
-            row += `<td> <a onclick="edit(this)" data-id="${ride.id}" data-entity="table" class=" link edit" >Editar</a>  |  <a  onclick="deleteEntity(this);" data-id="${ride.id}" data-entity="table" class="link delete">Eliminar</a>  </td>`;
+            row += `<td class='text-center'> <a data-toggle="modal" href="#editar" onclick="editRide(this)" data-id="${ride.id}" data-entity="table" class=" link edit" >Editar</a>  -  <a  onclick="deleteRide(this);" data-id="${ride.id}" data-entity="table" class="link delete">Eliminar</a>  </td>`;
             rows += row + '</tr>';
         }
     });
-    if(!rows == ""){
+    if (!rows == "") {
         var rows = "<thead class='text-center'><tr><th scope='col'>Nombre</th><th scope='col'>Origen</th><th scope='col'>Destino</th><th scope='col'>Acciones</th></tr></thead>" + '<tbody>' + rows + '</tbody>';
         table.html(rows);
+    }
+    else {
+        table.html(rows);
+    }
+}
+
+function deleteRide(element) {
+    var usuario = nameUser();
+    var object = jQuery(element).data();
+    var newObject = deleteFromTable('rides', object.id);
+    loadTableRidesUser(usuario, newObject);
+}
+
+function editRide(element) {
+    var object = jQuery(element).data();
+    loadRide(object.id);
+}
+
+function loadRide(object) {
+    var list = getList('rides');
+    for (var i = 0; i < list.length; i++) {
+        if (object == list[i].id) {
+            jQuery("#inputName").val(list[i].nombre);
+            jQuery("#inputOrigen").val(list[i].origen);
+            jQuery("#inputDestino").val(list[i].destino);
+            jQuery("#inputDescripcion").val(list[i].descripcion);
+            jQuery("#inputSalida").val(list[i].salida);
+            jQuery("#inputLlegada").val(list[i].llegada);
+            if (list[i].lunes == true) {
+                jQuery("#chkLunes").prop('checked', true);
+            }
+            if (list[i].martes == true) {
+                jQuery("#chkMartes").prop('checked', true);
+            }
+            if (list[i].miercoles == true) {
+                jQuery("#chkMiercoles").prop('checked', true);
+            }
+            if (list[i].jueves == true) {
+                jQuery("#chkJueves").prop('checked', true);
+            }
+            if (list[i].viernes == true) {
+                jQuery("#chkViernes").prop('checked', true);
+            }
+            if (list[i].sabado == true) {
+                jQuery("#chkSabado").prop('checked', true);
+            }
+            if (list[i].domingo == true) {
+                jQuery("#chkDomingo").prop('checked', true);
+            }
+        }
     }
 }
 
