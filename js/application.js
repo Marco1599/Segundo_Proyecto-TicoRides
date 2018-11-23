@@ -269,6 +269,60 @@ function loadRide(object) {
             }
         }
     }
+    sessionStorage.setItem('idRide', object);
+}
+
+function saveEditedRide() {
+    var id = sessionStorage.getItem('idRide');
+    var nombre = document.getElementById('inputName').value;
+    var origen = document.getElementById('inputOrigen').value;
+    var destino = document.getElementById('inputDestino').value;
+    var descripcion = document.getElementById('inputDescripcion').value;
+    var salida = document.getElementById('inputSalida').value;
+    var llegada = document.getElementById('inputLlegada').value;
+    var lunes = document.getElementById('chkLunes').checked;
+    var martes = document.getElementById('chkMartes').checked;
+    var miercoles = document.getElementById('chkMiercoles').checked;
+    var jueves = document.getElementById('chkJueves').checked;
+    var viernes = document.getElementById('chkViernes').checked;
+    var sabado = document.getElementById('chkSabado').checked;
+    var domingo = document.getElementById('chkDomingo').checked;
+
+
+    var days = {
+        lunes: lunes,
+        martes: martes,
+        miercoles: miercoles,
+        jueves: jueves,
+        viernes: viernes,
+        sabado: sabado,
+        domingo: domingo
+    };
+    if (nombre == "" || origen == "" || destino == "" || descripcion == "" || salida == "" || llegada == "" || validateDays(days)) {
+        alert("Ingrese todos los datos");
+    }
+    else {
+        var list = getList('rides');
+        for (var i = 0; i < list.length; i++) {
+            if (id == list[i].id) {
+                list[i].nombre = nombre;
+                list[i].origen = origen;
+                list[i].destino = destino;
+                list[i].descripcion = descripcion;
+                list[i].salida = salida;
+                list[i].llegada = llegada;
+                list[i].lunes = lunes;
+                list[i].martes = martes;
+                list[i].miercoles = miercoles;
+                list[i].jueves = jueves;
+                list[i].viernes = viernes;
+                list[i].sabado = sabado
+                list[i].domingo = domingo;
+            }
+        }
+        saveList('rides',list);
+        location.reload(true);
+    }
 }
 
 
@@ -277,6 +331,7 @@ function bindEvents() {
     jQuery('#btnIniciarSesion').bind('click', login);
     jQuery('#btnGuardarCambios').bind('click', saveAccount);
     jQuery('#btnGuardarRides').bind('click', validateInputsRides);
+    jQuery('#btnGuardarRideE').bind('click',saveEditedRide);
 }
 
 bindEvents();
