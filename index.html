@@ -55,46 +55,17 @@
             <form>
                 <div class="row">
                     <div class="col-md-5">
-                        <input type="text" class="form-control" placeholder="Origen">
+                        <input type="text" class="form-control" placeholder="Origen" id="inputOrigen">
                     </div>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" placeholder="Destino">
+                        <input type="text" class="form-control" placeholder="Destino" id="inputDestino">
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary">Buscar mi Viaje!</button>
+                        <button type="button" class="btn btn-primary" id="btnBuscarRide">Buscar mi Viaje!</button>
                     </div>
                 </div>
             </form>
-            <table class="table table-hover table-bordered">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Origen</th>
-                        <th scope="col">Destino</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>barroyo</td>
-                        <td>Barrio Los Angeles</td>
-                        <td>Ciudad Quesada</td>
-                        <td><a href="#">Ver</a></td>
-                    </tr>
-                    <tr>
-                        <td>barroyo</td>
-                        <td>Ciudad Quesada</td>
-                        <td>Los Angeles</td>
-                        <td><a href="#">Ver</a></td>
-                    </tr>
-                    <tr>
-                        <td>yluna</td>
-                        <td>Ciudad Quesada</td>
-                        <td>San Pedro</td>
-                        <td><a href="#">Ver</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <table class="table table-hover table-bordered" id="tableRides"></table>
         </div>
     </div>
     <div class="section" id="section3">
@@ -154,6 +125,93 @@
                                 </div>
                                 <button type="button" class="btn btn-primary" id="btnRegistrarme">Registrarme</button>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal fade" id="verRide">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Paseo</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form>
+                                <div class="form-group">
+                                    <label>Nombre del viaje</label>
+                                    <input type="text" class="form-control" disabled id="inputName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Usuario</label>
+                                    <input type="text" class="form-control" disabled id="inputUser">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Origen</label>
+                                        <input type="text" class="form-control" disabled id="txtOrigen">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Destino</label>
+                                        <input type="text" class="form-control" disabled id="txtDestino">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control" id="inputDescripcion" disabled rows="2"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Salida</label>
+                                        <input type="text" class="form-control" id="inputSalida" disabled>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Llegada estimada</label>
+                                        <input type="text" class="form-control" id="inputLlegada" disabled>
+                                    </div>
+                                </div>
+                                <label>Días</label>
+                                <div class="form-row pb-3">
+                                    <div class="col-md-5">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkLunes" disabled>
+                                            <label class="custom-control-label" for="chkLunes">Lunes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkMartes" disabled>
+                                            <label class="custom-control-label" for="chkMartes">Martes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkMiercoles" disabled>
+                                            <label class="custom-control-label" for="chkMiercoles">Miércoles</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkJueves" disabled>
+                                            <label class="custom-control-label" for="chkJueves">Jueves</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkViernes" disabled>
+                                            <label class="custom-control-label" for="chkViernes">Viernes</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkSabado" disabled>
+                                            <label class="custom-control-label" for="chkSabado">Sábado</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input" id="chkDomingo" disabled>
+                                            <label class="custom-control-label" for="chkDomingo">Domingo</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

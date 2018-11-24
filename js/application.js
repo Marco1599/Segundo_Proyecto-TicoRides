@@ -255,7 +255,7 @@ function loadRide(object) {
             if (list[i].miercoles == true) {
                 jQuery("#chkMiercoles").prop('checked', true);
             }
-            if (list[i].jueves == true) {
+            if (list[i].jueves == true) {id: ""
                 jQuery("#chkJueves").prop('checked', true);
             }
             if (list[i].viernes == true) {
@@ -320,18 +320,91 @@ function saveEditedRide() {
                 list[i].domingo = domingo;
             }
         }
-        saveList('rides',list);
+        saveList('rides', list);
         location.reload(true);
     }
 }
 
+function searchRide() {
+    var origen = document.getElementById('inputOrigen').value;
+    var destino = document.getElementById('inputDestino').value;
+    if (origen == "" || destino == "") {
+        alert("Ingrese todos los datos");
+    }
+    else {
+        loadTableRides(origen, destino);
+    }
+}
+
+function loadTableRides(origen, destino) {
+    var table = jQuery('#tableRides');
+    var object = getList('rides');
+    var rows = "";
+    object.forEach((ride, index) => {
+        if (ride.origen == origen && ride.destino == destino) {
+            var row = `<tr><td>${ride.usuario}</td><td>${ride.origen}</td><td>${ride.destino}</td>`;
+            row += `<td class='text-center'> <a data-toggle="modal" href="#verRide" onclick="verRide(this)" data-id="${ride.id}" data-entity="tableRides" class=" link ver" >Ver</a></td>`;
+            rows += row + '</tr>';
+        }
+    });
+    if (!rows == "") {
+        var rows = "<thead class='text-center'><tr><th scope='col'>Usuario</th><th scope='col'>Origen</th><th scope='col'>Destino</th><th scope='col'></th></tr></thead>" + '<tbody>' + rows + '</tbody>';
+        table.html(rows);
+    }
+    else {
+        alert("No se encontraron paseos con ese origen y destino")
+        table.html(rows);
+    }
+}
+
+function verRide(element) {
+    var object = jQuery(element).data();
+    cargarRide(object.id);
+}
+
+function cargarRide(object) {
+    var list = getList('rides');
+    for (var i = 0; i < list.length; i++) {
+        if (object == list[i].id) {
+            jQuery("#inputName").val(list[i].nombre);
+            jQuery("#inputUser").val(list[i].usuario);
+            jQuery("#txtOrigen").val(list[i].origen);
+            jQuery("#txtDestino").val(list[i].destino);
+            jQuery("#inputDescripcion").val(list[i].descripcion);
+            jQuery("#inputSalida").val(list[i].salida);
+            jQuery("#inputLlegada").val(list[i].llegada);
+            if (list[i].lunes == true) {
+                jQuery("#chkLunes").prop('checked', true);
+            }
+            if (list[i].martes == true) {
+                jQuery("#chkMartes").prop('checked', true);
+            }
+            if (list[i].miercoles == true) {
+                jQuery("#chkMiercoles").prop('checked', true);
+            }
+            if (list[i].jueves == true) {id: ""
+                jQuery("#chkJueves").prop('checked', true);
+            }
+            if (list[i].viernes == true) {
+                jQuery("#chkViernes").prop('checked', true);
+            }
+            if (list[i].sabado == true) {
+                jQuery("#chkSabado").prop('checked', true);
+            }
+            if (list[i].domingo == true) {
+                jQuery("#chkDomingo").prop('checked', true);
+            }
+        }
+    }
+}
 
 function bindEvents() {
     jQuery('#btnRegistrarme').bind('click', validateInputsRegister);
     jQuery('#btnIniciarSesion').bind('click', login);
     jQuery('#btnGuardarCambios').bind('click', saveAccount);
     jQuery('#btnGuardarRides').bind('click', validateInputsRides);
-    jQuery('#btnGuardarRideE').bind('click',saveEditedRide);
+    jQuery('#btnGuardarRideE').bind('click', saveEditedRide);
+    jQuery('#btnBuscarRide').bind('click', searchRide);
 }
 
 bindEvents();

@@ -3,6 +3,11 @@
     padding-bottom: 250px;
 }
 
+#section2{
+
+    padding-bottom: 450px;
+}
+
 #section2 h2{
     font-size: 40px;
 }
@@ -14,6 +19,10 @@
 }
 .row button{
     margin-top: 3%;
+}
+
+textarea{
+    resize: none;
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -46,6 +55,6 @@
         padding-top: 10%;
     }
     .section{
-        padding-bottom: 100px;
+        padding-bottom: 150px;
     }
 }
