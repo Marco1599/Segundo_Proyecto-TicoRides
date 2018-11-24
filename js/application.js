@@ -237,6 +237,7 @@ function editRide(element) {
 }
 
 function loadRide(object) {
+    desenmarcarChk();
     var list = getList('rides');
     for (var i = 0; i < list.length; i++) {
         if (object == list[i].id) {
@@ -255,7 +256,7 @@ function loadRide(object) {
             if (list[i].miercoles == true) {
                 jQuery("#chkMiercoles").prop('checked', true);
             }
-            if (list[i].jueves == true) {id: ""
+            if (list[i].jueves == true) {
                 jQuery("#chkJueves").prop('checked', true);
             }
             if (list[i].viernes == true) {
@@ -362,7 +363,19 @@ function verRide(element) {
     cargarRide(object.id);
 }
 
+function desenmarcarChk() {
+    jQuery("#chkLunes").prop('checked', false);
+    jQuery("#chkMartes").prop('checked', false);
+    jQuery("#chkMiercoles").prop('checked', false);
+    jQuery("#chkJueves").prop('checked', false);
+    jQuery("#chkViernes").prop('checked', false);
+    jQuery("#chkSabado").prop('checked', false);
+    jQuery("#chkDomingo").prop('checked', false);
+
+}
+
 function cargarRide(object) {
+    desenmarcarChk();
     var list = getList('rides');
     for (var i = 0; i < list.length; i++) {
         if (object == list[i].id) {
@@ -382,7 +395,7 @@ function cargarRide(object) {
             if (list[i].miercoles == true) {
                 jQuery("#chkMiercoles").prop('checked', true);
             }
-            if (list[i].jueves == true) {id: ""
+            if (list[i].jueves == true) {
                 jQuery("#chkJueves").prop('checked', true);
             }
             if (list[i].viernes == true) {
