@@ -34,17 +34,24 @@ function saveList(key, list) {
 
 function deleteFromTable(key, objectId) {
     var rides = getList(key);
-  
+
     if (!rides) {
-      return false;
+        return false;
     }
     var newRides = [];
     rides.forEach((element) => {
-      if (element.id != objectId) {
-        newRides.push(element);
-      }
+        if (element.id != objectId) {
+            newRides.push(element);
+        }
     });
-  
-    saveList(key,newRides);
+    newRides = cambiarId(newRides);
+    saveList(key, newRides);
     return newRides;
-  }
+}
+
+function cambiarId(list){
+    for (let i = 0; i < list.length; i++) {
+        list[i].id = i+1;
+    }
+    return list;
+}
