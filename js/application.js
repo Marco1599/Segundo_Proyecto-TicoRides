@@ -1,7 +1,7 @@
 
 function login() {
-    var user = document.getElementById('txtUser').value;
-    var pass = document.getElementById('txtPass').value;
+    var user = document.getElementById('txtUser').value.trim();
+    var pass = document.getElementById('txtPass').value.trim();
     var acceso = false;
     acceso = validateUser(user, pass);
 
@@ -16,12 +16,12 @@ function login() {
 
 
 function validateInputsRegister() {
-    var nombre = document.getElementById('txtNombre').value;
-    var apellidos = document.getElementById('txtApellidos').value;
-    var telefono = document.getElementById('txtTelefono').value;
-    var usuario = document.getElementById('txtUsuario').value;
-    var password = document.getElementById('txtPassword').value;
-    var repeatpass = document.getElementById('txtRepeatpass').value;
+    var nombre = document.getElementById('txtNombre').value.trim();
+    var apellidos = document.getElementById('txtApellidos').value.trim();
+    var telefono = document.getElementById('txtTelefono').value.trim();
+    var usuario = document.getElementById('txtUsuario').value.trim();
+    var password = document.getElementById('txtPassword').value.trim();
+    var repeatpass = document.getElementById('txtRepeatpass').value.trim();
 
     var newUser = {
         nombre: nombre,
@@ -96,10 +96,9 @@ function loadAccount() {
 }
 
 function saveAccount() {
-    var name = document.getElementById('inputName').value;
-    var velocidad = document.getElementById('inputVelocidad').value;
-    var descripcion = document.getElementById('sobre_mi').value;
-    name = name.trim();
+    var name = document.getElementById('inputName').value.trim();
+    var velocidad = document.getElementById('inputVelocidad').value.trim();
+    var descripcion = document.getElementById('sobre_mi').value.trim();
     var cadena = name.split(" ");
     var user = nameUser();
     var list = getList('users');
@@ -132,12 +131,12 @@ function saveAccount() {
 
 function validateInputsRides() {
     var usuario = nameUser();
-    var nombre = document.getElementById('inputName').value;
-    var origen = document.getElementById('inputOrigen').value;
-    var destino = document.getElementById('inputDestino').value;
-    var descripcion = document.getElementById('inputDescripcion').value;
-    var salida = document.getElementById('inputSalida').value;
-    var llegada = document.getElementById('inputLlegada').value;
+    var nombre = document.getElementById('inputName').value.trim();
+    var origen = document.getElementById('inputOrigen').value.trim();
+    var destino = document.getElementById('inputDestino').value.trim();
+    var descripcion = document.getElementById('inputDescripcion').value.trim();
+    var salida = document.getElementById('inputSalida').value.trim();
+    var llegada = document.getElementById('inputLlegada').value.trim();
     var lunes = document.getElementById('chkLunes').checked;
     var martes = document.getElementById('chkMartes').checked;
     var miercoles = document.getElementById('chkMiercoles').checked;
@@ -275,12 +274,12 @@ function loadRide(object) {
 
 function saveEditedRide() {
     var id = sessionStorage.getItem('idRide');
-    var nombre = document.getElementById('inputName').value;
-    var origen = document.getElementById('inputOrigen').value;
-    var destino = document.getElementById('inputDestino').value;
-    var descripcion = document.getElementById('inputDescripcion').value;
-    var salida = document.getElementById('inputSalida').value;
-    var llegada = document.getElementById('inputLlegada').value;
+    var nombre = document.getElementById('inputName').value.trim();
+    var origen = document.getElementById('inputOrigen').value.trim();
+    var destino = document.getElementById('inputDestino').value.trim();
+    var descripcion = document.getElementById('inputDescripcion').value.trim();
+    var salida = document.getElementById('inputSalida').value.trim();
+    var llegada = document.getElementById('inputLlegada').value.trim();
     var lunes = document.getElementById('chkLunes').checked;
     var martes = document.getElementById('chkMartes').checked;
     var miercoles = document.getElementById('chkMiercoles').checked;
@@ -327,8 +326,8 @@ function saveEditedRide() {
 }
 
 function searchRide() {
-    var origen = document.getElementById('inputOrigen').value;
-    var destino = document.getElementById('inputDestino').value;
+    var origen = document.getElementById('inputOrigen').value.trim();
+    var destino = document.getElementById('inputDestino').value.trim();
     if (origen == "" || destino == "") {
         alert("Ingrese todos los datos");
     }
